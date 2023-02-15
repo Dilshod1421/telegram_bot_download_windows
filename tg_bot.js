@@ -1,13 +1,12 @@
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
+const mongoose = require('mongoose');
+const UsersBot = require('./models/connect.js');
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 //================================== bot commands ==========================================
 bot.setMyCommands([
     { command: '/start', description: 'Botni ishga tushurish' },
-    { command: '/operatsion_systems', description: "Operatsion sistemalar bo'limi" },
-    { command: '/archive_password', description: "Arxivlar paroli bo'limi" },
-    { command: '/document_archive_password', description: "Arxivlar paroli bo'limi qo'llanmasi" },
     { command: '/clear', description: "Chatni tozalash" }
 ]);
 
@@ -42,24 +41,46 @@ const windows11 = additions(["Windows 11 Russian Pro 21H2", "Windows 11 by Smoki
 
 
 //=================================== start bot =============================
-const startBot = () => {
-    bot.on('message', (msg) => {
+const startBot = async () => {
+    try {
+        mongoose.set('strictQuery', false);
+        mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, console.log("Mongo DB connected"));
+    }
+    catch (err) {
+        console.log(err);
+    }
+    bot.on('message', async (msg) => {
         const text = msg.text;
         const chatId = msg.chat.id;
+        if (!(await UsersBot.findOne({ userId: chatId }))) {
+            const user_data = {
+                userId: chatId,
+                first_name: msg.chat.first_name,
+                last_name: msg.chat.last_name,
+                username: msg.chat.username
+            };
+            await UsersBot.create(user_data);
+        }
+        const filter = {};
+        const users = await UsersBot.find(filter);
 
         if (text === '/start' || text === "Asosiy sahifa ↩️") {
             return bot.sendMessage(chatId, `Assalomu alaykum ${msg.chat.first_name}. Botga xush kelibsiz!`, main);
         };
 
-        if (text === "Arxivlar paroli 🗝️" || text === '/archive_password') {
+        if (text === "Arxivlar paroli 🗝️") {
             return bot.sendPhoto(chatId, './images/abudev.png', { caption: "Arxiv paroli rasmda ko'rsatilgan 😊" });
         };
 
-        if (text === "Arxivdan chiqarish qo'llanmasi 📃" || text === '/document_archive_password') {
+        if (text === "Arxivdan chiqarish qo'llanmasi 📃") {
             return bot.sendPhoto(chatId, './images/arxiv.jpg', { caption: "Ko`p faylli arxivlarni arxivdan xalos qilish uchun qo`llanma !!!" });
         };
 
-        if (text === "Operatsion sistemalar 📲" || text === '/operatsion_systems') {
+        if (text === "Statistika 📊") {
+            return bot.sendMessage(chatId, `👥 Botdagi obunachilar soni ${users.length} ta`);
+        };
+
+        if (text === "Operatsion sistemalar 📲") {
             return bot.sendMessage(chatId, "Operatsion sistemalardan birini tanlang.", o_systems);
         };
 
@@ -75,6 +96,7 @@ const startBot = () => {
             return bot.sendMessage(chatId, "Windows 11 turlarining birini tanlang.", windows11);
         };
 
+        
     });
 };
 startBot();
