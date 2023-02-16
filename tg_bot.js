@@ -34,7 +34,7 @@ const additions = (texts, rows) => {
 //================================== variables for function ==============================
 const backButtons = ["Orqaga ⬅️", "Asosiy menu ↩️"]
 const start = additions(["Operatsion sistemalar 📲", "Arxivlar paroli 🗝️", "Arxivdan chiqarish qo'llanmasi 📃", "Statistika 📊"], [1, 1, 2]);
-const o_systems = additions(["Windows", "Linux", "MacOS", "AndroidOs", ...backButtons], [2, 1, 1, 2]);
+const o_systems = additions(["Windows", "Linux", "MacOS", "Android OS", ...backButtons], [2, 1, 1, 2]);
 const windows = additions(["x32", "x64", ...backButtons], [2, 2]);
 const x64 = additions(["Windows 11", "Windows 10", "Windows 8", "Windows 7", "Windows Vista", ...backButtons], [3, 2, 2]);
 const x32 = additions(["Windows 10 | 32", "Windows 8 | 32", "Windows 7 | 32", "Windows Vista | 32", "Windows XP | 32", "Windows 98 | 32", ...backButtons], [1, 2, 1, 2, 2]);
@@ -47,6 +47,14 @@ const windows8_32 = additions(["Professional | x32", "Enterprice | x32", ...back
 const windows7_32 = additions(["Ultimate | x32", ...backButtons], [1, 2]);
 const windowsxp_32 = additions(["Professional", "Chip", ...backButtons], [1, 1, 2]);
 const linux = additions(["Ubuntu", "Kali", "PureOs", "Debian", "CentOS", "Puppy", "BlackLab", "Arch Linux", "Slackware", "Solus", "Bodhi Linux", "Xubuntu", "Zorin Linux", "PCLinuxOs", ...backButtons], [2, 2, 3, 3, 2, 2, 2]);
+const andorid = additions(["Android 9.0", "Prime OS", "Bliss OS", ...backButtons], [1, 1, 1, 2]);
+const android9_0 = additions(["32 bit", "64 bit", ...backButtons], [1, 2]);
+const android_versions = [
+    ["32 bit", './images/android/android9_32bit.jpg', "https://www.windowsinside.com/software/android-x86-32"],
+    ["64 bit", './images/android/android9_64bit.jpg', "https://android-x86.en.uptodown.com/windows/download"],
+    ["Prime OS", './images/android/primeOS.jpg', "https://www.primeos.in/"],
+    ["Bliss OS", './images/android/blissOS.jpg', "https://blissos.org/"]
+];
 let to_back = [];
 const windows64 = JSON.parse(fs.readFileSync('./models/windows.json', 'utf8'));
 const windows32 = JSON.parse(fs.readFileSync('./models/windows32.json', 'utf8'));
@@ -76,7 +84,7 @@ const startBot = async () => {
         };
         const filter = {};
         const users = await UsersBot.find(filter);
-        if (!to_back.includes(text) && text != "Orqaga ⬅️") {
+        if (!to_back.includes(text) && text != "Orqaga ⬅️" && text != "MacOS") {
             to_back.push(text);
         };
 
@@ -114,6 +122,25 @@ const startBot = async () => {
         };
 
         for (let i of linux_versions) {
+            if (text == i[0]) {
+                to_back.pop();
+                return bot.sendPhoto(chatId, i[1], { caption: `${i[0]}\n${i[2]}` });
+            };
+        };
+
+        if (text == "MacOS") {
+            return bot.sendPhoto(chatId, './images/macOs.jpg', { caption: "MacOS\nhttps://support.apple.com/downloads/macos" });
+        };
+
+        if (text == "Android OS") {
+            return bot.sendMessage(chatId, "Android versiyalaridan birini tanlang", andorid);
+        };
+
+        if (text == "Android 9.0") {
+            return bot.sendMessage(chatId, "Android 9.0 razryadlaridan birini tanlang", android9_0);
+        };
+
+        for (let i of android_versions) {
             if (text == i[0]) {
                 to_back.pop();
                 return bot.sendPhoto(chatId, i[1], { caption: `${i[0]}\n${i[2]}` });
