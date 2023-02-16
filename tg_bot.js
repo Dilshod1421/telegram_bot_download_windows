@@ -46,9 +46,11 @@ const windows10_32 = additions(["1507", "1511", "1607", "1703", "1709", "1803", 
 const windows8_32 = additions(["Professional | x32", "Enterprice | x32", ...backButtons], [1, 1, 2]);
 const windows7_32 = additions(["Ultimate | x32", ...backButtons], [1, 2]);
 const windowsxp_32 = additions(["Professional", "Chip", ...backButtons], [1, 1, 2]);
+const linux = additions(["Ubuntu", "Kali", "PureOs", "Debian", "CentOS", "Puppy", "BlackLab", "Arch Linux", "Slackware", "Solus", "Bodhi Linux", "Xubuntu", "Zorin Linux", "PCLinuxOs", ...backButtons], [2, 2, 3, 3, 2, 2, 2]);
 let to_back = [];
 const windows64 = JSON.parse(fs.readFileSync('./models/windows.json', 'utf8'));
 const windows32 = JSON.parse(fs.readFileSync('./models/windows32.json', 'utf8'));
+const linux_versions = JSON.parse(fs.readFileSync('./models/linux.json', 'utf8'));
 
 
 //=================================== start bot =============================
@@ -105,6 +107,17 @@ const startBot = async () => {
 
         if (text == "Windows") {
             return bot.sendMessage(chatId, "Windows razryadlaridan birini tanlang", windows);
+        };
+
+        if (text == "Linux") {
+            return bot.sendMessage(chatId, "Linux versiyalaridan birini tanlang", linux);
+        };
+
+        for (let i of linux_versions) {
+            if (text == i[0]) {
+                to_back.pop();
+                return bot.sendPhoto(chatId, i[1], { caption: `${i[0]}\n${i[2]}` });
+            };
         };
 
         if (text == 'x64') {

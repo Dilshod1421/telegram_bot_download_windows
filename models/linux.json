@@ -1,0 +1,16 @@
+[
+    ["Ubuntu", "./images/linux/ubuntu.jpg", "https://ubuntu.com/download/desktop"],
+    ["Kali", "./images/linux/kali.jpg", "https://www.kali.org/get-kali/"],
+    ["PureOs", "./images/linux/pureos.jpg", "https://pureos.net/download/"],
+    ["Debian", "./images/linux/debian.jpg", "https://www.debian.org/distrib/"],
+    ["CentOs", "./images/linux/centos.jpg", "https://www.centos.org/download/"],
+    ["Puppy", "./images/linux/puppy.jpg", "https://puppylinux-woof-ce.github.io/"],
+    ["BlackLab", "./images/linux/blacklab.jpg", "https://sourceforge.net/projects/os4online/"],
+    ["Arch Linux", "./images/linux/arch.jpg", "https://archlinux.org/download/"],
+    ["Slackware", "./images/linux/slackware.jpg", "http://www.slackware.com/getslack/"],
+    ["Solus", "./images/linux/slous.jpg", "https://linuxconfig.org/solus-linux-download"],
+    ["Bodhi Linux", "./images/linux/bodhi.jpg", "https://www.bodhilinux.com/download/"],
+    ["Xubuntu", "./images/linux/xubuntu.jpg", "https://www.bodhilinux.com/download/"],
+    ["Zorin Linux", "./images/linux/zorin.jpg", "https://zorin.com/os/download/"],
+    ["PCLinuxOs", "./images/linux/pc.jpg", "https://www.pclinuxos.com/?page_id=10"]
+]
