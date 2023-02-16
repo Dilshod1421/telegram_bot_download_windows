@@ -1,0 +1,89 @@
+[
+    [
+        "Windows Vista", "./images/windows/windowsVista_x64.jpg", "https://www.microsoft.com/en-us/download/confirmation.aspx?id=7120"
+    ],
+    [
+        "Windows 11 Russian Pro 21H2", "./images/windows/windows_11_pro_21h2.jpg", "https://archive.org/details/win-11-russian-x-64"
+    ],
+    [
+        "Windows 11 by SmokieBlahBlah", "./images/windows/windows11_smokieBlahblah.jpg", "https://manshet.org/3266-windows-11-16in1-office-2019-x86-by-smokieblahblah-20211010-ru-en.html"
+    ],
+    [
+        "Windows 11 21H2 by Tatata", "./images/windows/windows11_21h2_tatata.jpg", "https://windows-soft.info/16563-windows-11-220001041-3in1-by-tatata-x64-2022-rus.html"
+    ],
+    [
+        "Windows 11 21H2 by OneSmile", "./images/windows/windows11_21h2_onesmile.jpg", "https://win-pro.net/windows_11/3513-windows-11-21h2-x64-rus-by-onesmile-22000527.html"
+    ],
+    [
+        "Windows 11 Compact&Full by flibustier", "./images/windows/windows11_compact.jpg", "https://pcprogs.net/2126-windows-11-21h222000318-x64-compact-full-flibustier.html"
+    ],
+    [
+        "Windows 11 21H2 Pro Insider", "./images/windows/windows11_21h2_proinsider.jpg", "https://www.comss.ru/page.php?id=3297"
+    ],
+    [
+        "Windows 11 21H2 rus gx", "./images/windows/windows11_21h2_rus_gx.jpg", "https://windows64.net/355-windows-11-x64-pro-21h2-rus-s-aktivatorom.html"
+    ],
+    [
+        "Windows 11 21H2 by Ovgorskiy", "./images/windows/windows11_21h2_ovgorskiy.jpg", "https://forum.ovgorskiy.ru/viewtopic.php?f=33&t=4546"
+    ],
+    [
+        "Windows 11 21H2 Enterprice by Zosma", "./images/windows/windows11_21h2_zosma.jpg", "https://soft-windows.info/13970-windows-11-enterprise-micro-21h222000258-by-zosma-x64-2021-rus.html"
+    ],
+    [
+        "Windows 11 IoT Enterprice by Xalex", "./images/windows/windows11_iot_xalex.jpg", "https://prog-top.net/windows/windows_11/23124-windows-11-iot-enterprise-mini-220009-for-ssd-by-xalex-x64.html"
+    ],
+    [
+        "Windows 11 Pro 21H2 by OneSmile", "./images/windows/windows11_pro_21h2_onesmile.jpg", "https://11windows.ru/windows-11-pro-21h2-ot-onesmile-x64/"
+    ],
+    [
+        "Windows 11 IP LTSC by Djannet", "./images/windows/windows11_ip_ltsc_djannet.jpg", "https://win-pro.net/windows_11/3328-windows-11-ip-ltsc-22000160-2in1-by-djannet-64bit.html"
+    ],
+    [
+        "1507 | x64", "./images/windows/windows10_1507_x64.jpg", "https://archive.org/details/windows-10-1507"
+    ],
+    [
+        "1511 | x64", "./images/windows/windows10_1511_x64.jpg", "https://archive.org/details/win10-1511"
+    ],
+    [
+        "1606 | x64", "./images/windows/windows10_1607_x64.jpg", "https://drivers.softpedia.com/get/NETWORK-CARD/INTEL/Intel-Killer-Performance-Suite-3-0-1606-for-Windows-10-64-bit.shtml"
+    ],
+    [
+        "1703 | x64", "./images/windows/windows10_1703_x64.jpg", "https://answers.microsoft.com/en-us/windows/forum/all/download-link-of-windows-10-1703-version-iso/98a99963-4e16-409f-9ffc-6787e74aec1b"
+    ],
+    [
+        "1709 | x64", "./images/windows/windows10_1709_x64.jpg", "https://softcomputers.org/en/blog/download-windows-10-1709-version/"
+    ],
+    [
+        "1803 | x64", "./images/windows/windows10_1803_x64.jpg", "https://archive.org/details/windows-1803"
+    ],
+    [
+        "1809 | x64", "./images/windows/windows10_1809_x64.jpg", "https://archive.org/details/windows-1809"
+    ],
+    [
+        "1903 | x64", "./images/windows/windows10_1903_x64.jpg", "https://archive.org/details/windows-10-1903-x-64"
+    ],
+    [
+        "1909 | x64", "./images/windows/windows10_1909_x64.jpg", "https://archive.org/details/win-10-1909-english-x-64"
+    ],
+    [
+        "2004 | x64", "./images/windows/windows10_2004_x64.jpg", "https://archive.org/details/win-10-2004-english-x-64_202010"
+    ],
+    [
+        "20H2 | x64", "./images/windows/windows10_20h2_x64.jpg", "https://www.softlay.com/downloads/windows-10-20h2-iso"
+    ],
+    [
+        "21H1 | x64", "./images/windows/windows10_21h1_x64.jpg", "https://www.itechtics.com/download-windows-10-21h1/"
+    ],
+    [
+        "21H2 | x64", "./images/windows/windows10_21h2_x64.jpg", "https://www.minitool.com/news/windows-10-21h2-iso-file-download-and-install.html"
+    ],
+    [
+        "Professional | x64", "./images/windows/windows8_pro_x64.jpg", "https://www.microsoft.com/en-us/software-download/windows8ISO"
+    ],
+    [
+        "Enterprice | x64", "./images/windows/windows8_enterprice_x64.jpg", "https://archive.org/details/en_windows_8_enterprise_x64_dvd_917522"
+    ],
+    [
+        "Ultimate | x64", "./images/windows/windows7_x64.jpg", "https://www.softlay.com/downloads/windows-7-ultimate"
+    ]
+]

@@ -1,0 +1,22 @@
+[
+    ["Windows Vista | 32", "./images/windows/windowsVista_x32.jpg", "https://windows64.net/61-windows-vista-32-bit-sp2.html"],
+    ["Windows 98 | 32", "./images/windows/windows98.jpg", "https://softcomputers.org/download/download-windows-old/download-windows-98/"],
+    ["1507", "./images/windows/windows10_1507_x64.jpg", "https://archive.org/details/windows-10-1507"],
+    ["1511", "../images/windows/windows10_1511_x64.jpg", "https://archive.org/details/win10-1511"],
+    ["1607", "./images/windows/windows10_1607_x64.jpg", "https://www.softlay.com/downloads/windows-10-1607"],
+    ["1703", "./images/windows/windows10_1703_x64.jpg", "https://answers.microsoft.com/en-us/windows/forum/all/download-link-of-windows-10-1703-version-iso/98a99963-4e16-409f-9ffc-6787e74aec1b"],
+    ["1709", "./images/windows/windows10_1709_x64.jpg", "https://softcomputers.org/en/blog/download-windows-10-1709-version/"],
+    ["1803", "./images/windows/windows10_1803_x64.jpg", "https://archive.org/details/windows-1803"],
+    ["1809", "./images/windows/windows10_1809_x64.jpg", "https://archive.org/details/windows-1809"],
+    ["1903", "./images/windows/windows10_1903_x64.jpg", "https://archive.org/details/windows-10-1903-x-64"],
+    ["1909", "./images/windows/windows10_1909_x32.jpg", "https://archive.org/details/win-10-1909-english-x-64"],
+    ["2004", "./images/windows/windows10_2004_x32.jpg", "https://windows64.net/271-windows-10-32bit-2004-originalnyy-iso-obraz-x86.html"],
+    ["20H2", "./images/windows/windows10_20h2_x64.jpg", "https://www.softlay.com/downloads/windows-10-20h2-iso"],
+    ["21H1", "./images/windows/windows10_21h1_x32.jpg", "https://www.itechtics.com/download-windows-10-21h1/"],
+    ["21H2", "./images/windows/windows10_21h2_x32.jpg", "https://www.minitool.com/news/windows-10-21h2-iso-file-download-and-install.html"],
+    ["Professional | x32", "./images/windows/windows8_pro_x32.jpg", "https://www.microsoft.com/en-us/software-download/windows8ISO"],
+    ["Enterprice | x32", "./images/windows/windows8_enterprice_x32.jpg", "https://archive.org/details/en_windows_8_enterprise_x64_dvd_917522"],
+    ["Ultimate | x32", "./images/windows/windows7_x64.jpg", "https://www.softlay.com/downloads/windows-7-ultimate"],
+    ["Professional", "./images/windows/windowsxp_pro.jpg", "https://www.softlay.com/downloads/windows-xp-sp3"],
+    ["Chip", "./images/windows/windowsxp_chip.jpg", "https://windowsbit.net/sborki-windows-xp/303-windows-xp-32-bit-2014-final-chip-usb-na-russkom.html"]
+]
