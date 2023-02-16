@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 const UsersBot = require('./models/connect.js');
 const fs = require('fs');
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+const [month, day, year] = new Date().toLocaleDateString('en-US').split('/');
 
 //================================== bot commands ==========================================
 bot.setMyCommands([
     { command: '/start', description: 'Botni ishga tushurish' }
 ]);
-
 
 //================================== function for sendMessage ==============================
 const additions = (texts, rows) => {
@@ -48,7 +48,7 @@ const windows7_32 = additions(["Ultimate | x32", ...backButtons], [1, 2]);
 const windowsxp_32 = additions(["Professional", "Chip", ...backButtons], [1, 1, 2]);
 const linux = additions(["Ubuntu", "Kali", "PureOs", "Debian", "CentOS", "Puppy", "BlackLab", "Arch Linux", "Slackware", "Solus", "Bodhi Linux", "Xubuntu", "Zorin Linux", "PCLinuxOs", ...backButtons], [2, 2, 3, 3, 2, 2, 2]);
 const andorid = additions(["Android 9.0", "Prime OS", "Bliss OS", ...backButtons], [1, 1, 1, 2]);
-const android9_0 = additions(["32 bit", "64 bit", ...backButtons], [1, 2]);
+const android9_0 = additions(["32 bit", "64 bit", ...backButtons], [2, 2]);
 const android_versions = [
     ["32 bit", './images/android/android9_32bit.jpg', "https://www.windowsinside.com/software/android-x86-32"],
     ["64 bit", './images/android/android9_64bit.jpg', "https://android-x86.en.uptodown.com/windows/download"],
@@ -78,12 +78,16 @@ const startBot = async () => {
                 userId: chatId,
                 first_name: msg.chat.first_name,
                 last_name: msg.chat.last_name,
-                username: msg.chat.username
+                username: msg.chat.username,
+                month: month,
+                day: day,
+                year: year
             };
             await UsersBot.create(user_data);
         };
         const filter = {};
         const users = await UsersBot.find(filter);
+        console.log(users);
         if (!to_back.includes(text) && text != "Orqaga ⬅️" && text != "MacOS") {
             to_back.push(text);
         };
@@ -106,7 +110,36 @@ const startBot = async () => {
         };
 
         if (text == "Statistika 📊") {
-            return bot.sendMessage(chatId, `👥 Botdagi obunachilar soni ${users.length} ta\n\n@operatsionSystems_bot statistikasi`);
+            let start_bot = (month - users[0].month) * 31 + day - users[0].day + (year - users[0].year) * 365;
+            let y, m, d, last_month = 0, last_day = 0;
+            if (month == 1) {
+                y = year - 1;
+                m = 12;
+            } else {
+                y = year;
+                m = month - 1;
+            }
+            for (let i in users) {
+                if (users[i].month >= m && users[i].day >= day && users[i].year >= y) {
+                    last_month = users.length - i;
+                    break;
+                }
+            }
+            if (month == 1) {
+                m = month - 1;
+                d = 31;
+            } else {
+                m = month;
+                d = day - 1;
+            }
+            for (let i in users) {
+                if (users[i].month >= m && users[i].day >= d && users[i].year >= year) {
+                    last_day = users.length - i;
+                    break;
+                }
+            };
+
+            return bot.sendMessage(chatId, `👥 Botdagi obunachilar: ${users.length}\n\n🔜 Oxirgi 24 soatda: ${last_day} ta obunachi qo'shildi\n🔝 Oxirgi 1 oyda: ${last_month} ta obunachi qo'shildi\n📆 Bot ishga tushganiga: ${start_bot} kun bo'ldi\n\n📊  @operatsionSystems_bot statistikasi`)
         };
 
         if (text == "Operatsion sistemalar 📲") {
