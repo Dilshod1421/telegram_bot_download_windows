@@ -2,7 +2,7 @@
     ["Windows Vista | 32", "./images/windows/windowsVista_x32.jpg", "https://windows64.net/61-windows-vista-32-bit-sp2.html"],
     ["Windows 98 | 32", "./images/windows/windows98.jpg", "https://softcomputers.org/download/download-windows-old/download-windows-98/"],
     ["1507", "./images/windows/windows10_1507_x64.jpg", "https://archive.org/details/windows-10-1507"],
-    ["1511", "../images/windows/windows10_1511_x64.jpg", "https://archive.org/details/win10-1511"],
+    ["1511", "./images/windows/windows10_1511_x64.jpg", "https://archive.org/details/win10-1511"],
     ["1607", "./images/windows/windows10_1607_x64.jpg", "https://www.softlay.com/downloads/windows-10-1607"],
     ["1703", "./images/windows/windows10_1703_x64.jpg", "https://answers.microsoft.com/en-us/windows/forum/all/download-link-of-windows-10-1703-version-iso/98a99963-4e16-409f-9ffc-6787e74aec1b"],
     ["1709", "./images/windows/windows10_1709_x64.jpg", "https://softcomputers.org/en/blog/download-windows-10-1709-version/"],
