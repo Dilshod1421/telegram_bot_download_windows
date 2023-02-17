@@ -120,14 +120,14 @@ const startBot = async () => {
                 m = month - 1;
             }
             for (let i in users) {
-                if (users[i].month >= m && users[i].day >= day && users[i].year >= y) {
+                if (users[i].month >= m && users[i].year >= y) {
                     last_month = users.length - i;
                     break;
                 }
             }
-            if (month == 1) {
+            if (day == 1) {
                 m = month - 1;
-                d = 31;
+                d = 30;
             } else {
                 m = month;
                 d = day - 1;
@@ -138,7 +138,6 @@ const startBot = async () => {
                     break;
                 }
             };
-
             return bot.sendMessage(chatId, `👥 Botdagi obunachilar: ${users.length}\n\n🔜 Oxirgi 24 soatda: ${last_day} ta obunachi qo'shildi\n🔝 Oxirgi 1 oyda: ${last_month} ta obunachi qo'shildi\n📆 Bot ishga tushganiga: ${start_bot} kun bo'ldi\n\n📊  @operatsionSystems_bot statistikasi`)
         };
 
